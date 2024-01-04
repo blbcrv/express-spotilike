@@ -1,6 +1,6 @@
 const db = require('../database')
-const getAlbum = (req, res) => {
 
+const getAlbum = (req, res) => {
     db.query("select * from Album", (err, result) => {
         if(err) {
             res.status(500)
@@ -10,19 +10,23 @@ const getAlbum = (req, res) => {
     })
 }
 
-const getTracksFromAlbum = (req, res) => {
-    console.log(req.params.id)
+const getAlbumById = (req, res) => {
+    db.query(`select * from Album where id = ${req.params.id}`, (err, result) => {
+        if(err) console.log(err)
+        res.json(result)
+    })
+}
 
+const getTracksFromAlbum = (req, res) => {
     db.query(`select Track.*
              from Track
              join Album_tracks on Track.id = Album_tracks.track_id
              where Album_tracks.album_id = '${req.params.id}'`,
+
         (err, result) => {
-        if(err) console.log(err)
+            if(err) throw new Error("Error occured")
             res.json({result})
-
     })
-
 }
 const addAlbum = (req, res) => {
     if(!req.body.name){
@@ -42,6 +46,7 @@ const delAlbum = (req, res) => {
 
 module.exports = {
     getAlbum,
+    getAlbumById,
     getTracksFromAlbum,
     addAlbum,
     updateAlbum,
