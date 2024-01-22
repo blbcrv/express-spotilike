@@ -6,12 +6,14 @@ const {
     getTracksFromAlbum,
     delAlbum,
     updateAlbum,
-    addAlbum
-} = require('../controllers/albumController')
+    addAlbum,
+    addTrackInAlbum
+} = require('../controllers/albumController');
 
 router.get('/', getAlbum);
 router.get('/:id', getAlbumById);
-router.get('/:id/tracks', getTracksFromAlbum);
+router.get('/:id/songs', getTracksFromAlbum);
+router.post('/:id/songs', addTrackInAlbum);
 router.post('/', addAlbum);
 router.put('/:id', updateAlbum);
 router.delete('/:id', delAlbum);
