@@ -34,8 +34,34 @@ const updateArtist = (req, res) => {
     })
 }
 
+const getAllArtists = (req, res) => {
+    const id = req.params.id;
+    db.query('select * from Artist', (err, results) =>{
+        res.json({results});
+    })
+}
+
+const getArtistById = (req, res) => {
+    const id = req.params.id;
+    db.query(`select * from Artist where id = ${id}`, (err, results) =>{
+        res.json({results});
+    })
+}
+
+const getAlbumFromArtist = (req, res) => {
+    const id = req.params.id;
+    const sqlReq = `select Album.* from Album join Artist on Album.artist_id = Artist.id where Artist.id = ${id}`;
+    db.query(sqlReq, (err, results) =>{
+        if(err) return console.log(err);
+        return res.json({results});
+    })
+}
+
 module.exports= {
     getTracksFromArtist,
     deleteArtist,
-    updateArtist
+    updateArtist,
+    getAllArtists,
+    getArtistById,
+    getAlbumFromArtist
 }

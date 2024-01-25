@@ -1,10 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotilike - Page d'Accueil</title>
+    <!-- Liens vers les fichiers CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Lien vers votre fichier CSS personnalisé -->
+    <link rel="stylesheet" href="style/home.css">
 </head>
 <body>
 
+<!-- Barre de navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="./index.html">Spotilike</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="./index.html">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="html/artist.html">Artistes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="html/album.html">Albums</a>
+            </li>
+        </ul>
+        <div class="navbar-nav ml-auto">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="button-connection">Connexion</button>
+        </div>
+    </div>
+</nav>
+
+<!-- Contenu principal -->
+<div class="container mt-4">
+    <h1>Bienvenue sur Spotilike</h1>
+    <p>Découvrez des artistes exceptionnels et leurs dernières musiques.</p>
+
+    <!-- Section Artistes en Vedette -->
+    <h2>Artistes en Vedette</h2>
+    <div class="card-deck" id="all-cards"></div>
+
+    <!-- Section Musiques Recommandées -->
+    <h2>Albums Recommandées</h2>
+    <div class="card-deck" id="recom-albums"></div>
+</div>
+
+<!-- Liens vers les fichiers JavaScript de Bootstrap et jQuery (nécessaires pour les fonctionnalités Bootstrap) -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="scripts/functions.js"></script>
+<script src="scripts/homeScript.js"></script>
 </body>
 </html>
