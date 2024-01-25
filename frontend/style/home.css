@@ -1,0 +1,63 @@
+/* Styles CSS pour contrôler la taille des images */
+.card-img-top{
+    height: 250px; /* Ajustez la hauteur en fonction de vos besoins */
+    width: 100%;  /* Assurez-vous que l'image occupe la largeur complète de son conteneur */
+    object-fit: cover; /* Optionnel : contrôle le comportement de redimensionnement de l'image */
+}
+
+#all-cards{
+    margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0; /* L'overlay est initialement invisible */
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease-in-out; /* Transition douce de l'opacité */
+    animation: fadeIn 0.3s ease-in-out;
+}
+.overlay.active {
+    opacity: 1; /* L'overlay devient visible */
+    visibility: visible;
+}
+
+.overlay.hide {
+    opacity: 0; /* L'overlay devient invisible */
+    animation: fadeOut 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out; /* Transition douce de l'opacité */
+}
+
+/* Styles pour la carte à l'intérieur de l'overlay */
+.card-overlay {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
