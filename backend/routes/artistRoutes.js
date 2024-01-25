@@ -8,12 +8,13 @@ const {
     getArtistById,
    getAlbumFromArtist
 } = require("../controllers/artistController");
+const {protect} = require('../middlewares/authmiddleware');
 
 router.get('/', getAllArtists);
 router.get('/:id', getArtistById);
 router.get('/:id/albums', getAlbumFromArtist);
 router.get('/:id/songs', getTracksFromArtist);
 router.put('/:id', updateArtist);
-router.delete('/:id', deleteArtist);
+router.delete('/:id', protect, deleteArtist);
 
 module.exports = router;

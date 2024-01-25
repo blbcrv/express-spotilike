@@ -21,6 +21,7 @@ app.get('/', (req, res) => {
 app.use('/api/albums', require('./routes/albumRoutes'));
 app.use('/api/genres', require('./routes/genreRoutes'));
 app.use('/api/artists', require('./routes/artistRoutes'));
+app.use('/api/users', require('./routes/userRoutes'));
 // Initialisation d'Express
 app.listen(port, () => {
     console.log(`Server started on ${port}`)
