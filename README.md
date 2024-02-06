@@ -16,5 +16,6 @@
   Une fois cela fait, creer un fichier dotenv et y insérer les informations de connexion
 
 # Schema relationel de la base de données
+<img src="./diagram_express.png">
 
 
