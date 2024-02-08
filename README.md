@@ -9,7 +9,7 @@
   3. Installer les packages nécessaires : npm install
 
 ## Démarrer l'application
-  1. Se déplacer dans le dossier app : cd app
+  1. Se déplacer dans le dossier app : cd backend/
   2. Lancer l'application : npm run server
 
   Pour la base de données, le fichier SQL est présent sur le Git. Il faudra l'importer dans une base.
